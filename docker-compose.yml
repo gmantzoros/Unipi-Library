@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: Flask
+    ports:
+      - "5000:5000"  
+    volumes:
+      - ./flask_session:/usr/src/app/flask_session  # Mount the Flask session directory
+    depends_on:
+      - db
+
+  db:
+    image: mongo:latest
+    container_name: MongoDB
+    volumes:
+      - ./data:/data/db  # Mount the data directory for persistence
+    ports:
+      - "27017:27017"  # Expose MongoDB port

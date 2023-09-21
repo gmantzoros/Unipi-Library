@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Page</title>
+        <link rel="stylesheet" type="text/css" href="/static/style_admin.css">
+        <link rel="icon" type="image/x-icon" href="/static/UNIPI_(logo).png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><img src="/static/UNIPI_(logo).png" id="navimg"/></li>
+                <li><a href="#" onclick="showContent('add-content')">Add Book</a></li>
+                <li><a href="#" onclick="showContent('delete-content')">Delete Book</a></li>
+                <li><a href="#" onclick="showContent('search-content')">Search Book</a></li>
+                <li class="user-menu">
+                    <a href="#" id="user-menu-toggle"><i class="fa-solid fa-user"></i>           {{user.email}}</a>
+                    <ul id="user-menu">
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="add-content">
+            <h1 id="add-h1">Add New Book</h1>
+            <form id="add-book-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required><br>
+
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required><br>
+
+                <label for="genre">Genre:</label>
+                <input type="text" id="genre" name="genre" required><br>
+
+                <label for="publication_date">Publication Date:</label>
+                <input type="date" id="publication_date" name="publication_date" required><br>
+
+                <label for="isbn">ISBN:</label>
+                <input type="text" id="isbn" name="isbn" required><br>
+
+                <label for="pages">Number of Pages:</label>
+                <input type="number" id="pages" name="pages" required><br>
+
+                <label for="briefing">Briefing:</label>
+                <textarea id="briefing" name="briefing" rows="4" cols="95"  required></textarea><br>
+                <div id="add-button-container">
+                <button type="submit" id="add-button">Add Book</button>
+                </div>
+            </form>
+        </div>
+        <div id="delete-content" style="display: none;">
+            <h1 id="delete-h1">Delete Book</h1>
+            <form id="delete-book-form" method="post">
+                <label for="isbn">ISBN:</label>
+                <input type="text" id="delete-isbn" name="isbn" required>
+                <div id="delete-button-container">
+                    <button type="submit" id="delete-button">Delete Book</button>
+                </div>
+            </form>
+        </div>
+        <div id="search-content" style="display: none;">
+            <div id="search-bar">
+                <input type="text" id="search-input" placeholder="Search...">
+                <select id="search-criteria">
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="isbn">ISBN</option>
+                    <option value="availability">Availability</option>
+                </select>
+                <button id="search-button">Search</button>
+            </div>
+            <h1 id="Books">Books</h1>
+            <div id="book-list">
+            <!-- This is where the list of books will be displayed -->
+            </div>
+        </div>
+        <script src="/static/admin.js"></script>
+    </body>
+    <footer>
+        <p>&copy; 2023 Unipi Library Project Made by Georgios Mantzoros E18099. All rights reserved.</p>
+    </footer>
+</html>

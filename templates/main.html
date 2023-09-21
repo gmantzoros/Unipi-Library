@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/style_main.css">
+    <link rel="icon" type="image/x-icon" href="/static/UNIPI_(logo).png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><img src="/static/UNIPI_(logo).png" id="navimg"/></li>
+            <li><a href="#" onclick="showContent('home-content')">Home</a></li>
+            <li><a href="#" onclick="showContent('rent-content')">Rent</a></li>
+            <li><a href="#" onclick="showContent('return-content')">Return</a></li>
+            <li class="user-menu">
+                <a href="#" id="user-menu-toggle"><i class="fa-solid fa-user"></i>           {{user.email}}</a>
+                <ul id="user-menu">
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a id="delete-user" href="/delete-account">Delete Account</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="home-content">
+        {% if user %}
+            <h1 id="welcome">Welcome, {{ user.name }} {{ user.surname }}!</h1>
+        {% else %}
+            <p>User not found.</p>
+        {% endif %}
+        <div>
+            <img id="img-content" src="/static/background_library.jpg"/>
+        </div>
+    </div>
+    <div id="rent-content" style="display: none">
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <select id="search-criteria">
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+                <option value="publication_date">Publication Date</option>
+                <option value="genre">Genre</option>
+                <option value="isbn">ISBN</option>
+            </select>
+            <button id="search-button">Search</button>
+        </div>
+        <h2 id="Available">Available Books</h2>
+        <div id="book-list">
+        <!-- This is where the list of books will be displayed -->
+        </div>
+        <div id="rent-button-container">
+            <button id="rent-button">Rent Selected Books</button>
+        </div>
+    </div>
+    <div id="return-content" style="display: none;">
+        <h2 id="Rented">Rented Books</h2>
+        <div id="rented-books">
+        <!-- This is where the list of rented books will be displayed -->
+        </div>
+        <div id="return-button-container">
+            <button id="return-button">Return Selected Books</button>
+        </div>
+    </div>
+    <script src="/static/main.js"></script>
+</body>
+<footer>
+    <p>&copy; 2023 Unipi Library Project Made by Georgios Mantzoros E18099. All rights reserved.</p>
+</footer>
+</html>

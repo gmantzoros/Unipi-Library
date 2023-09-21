@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login / Register</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/UNIPI_(logo).png">
+</head>
+<body>
+    <div id="wrapper">
+    <img src="/static/UNIPI_(logo).png" alt="Unipi logo">
+    <h1>Unipi Library</h1>
+    <!--Login-->
+    <form action="/" method="post" id="LoginForm">
+    <input type="text" name="email" placeholder="Email" required><br><br>
+    <input type="password" name="password" placeholder="Password" required><br><br>
+    <input type="submit" name="action" value="Login">
+    </form>
+    
+    <!--Register-->
+    <form action="/" method="post" id="RegisterForm">
+        <input type="text" name="name" placeholder="Name" required><br><br>
+        <input type="text" name="surname" placeholder="Surname" required><br><br>
+        <input type="email" name="email" placeholder="Email" required><br><br>
+        <input type="password" name="password" placeholder="Password" required><br><br>
+        <input type="date" name="dateOfBirth" placeholder="Date of Birth" required><br><br>
+        <input type="submit" name="action" value="Register">
+    </form>
+
+    <p>Don't have an account? <a href="#" id="registerLink">Register</a></p>
+    <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+
+    <script>
+        // Show the login form and hide the register form initially
+        document.getElementById("RegisterForm").style.display = "none";
+
+        // Toggle between login and register forms
+        document.getElementById("loginLink").addEventListener("click", function() {
+            document.getElementById("LoginForm").style.display = "block";
+            document.getElementById("RegisterForm").style.display = "none";
+        });
+
+        document.getElementById("registerLink").addEventListener("click", function() {
+            document.getElementById("LoginForm").style.display = "none";
+            document.getElementById("RegisterForm").style.display = "block";
+        });
+        // Add these functions for displaying alerts and redirecting after successful login
+        function showAlert(message) {
+            alert(message);
+        }
+
+        function redirectToMain() {
+        window.location.href = "/main";
+        }
+
+        // Check if alert message is present in the URL and display it
+        const alertMessage = new URLSearchParams(window.location.search).get('alert');
+        if (alertMessage) {
+            showAlert(alertMessage);
+        }
+
+        // Check if redirected from successful login and redirect to main page
+        const redirectedFromLogin = new URLSearchParams(window.location.search).get('redirected');
+        if (redirectedFromLogin) {
+            redirectToMain();
+        }
+    </script>
+    </div>
+</body>
+</html>

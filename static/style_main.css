@@ -1,0 +1,299 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+body {
+    font-family: 'Raleway', sans-serif;  
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    margin-bottom: 70px;
+}
+
+nav {
+    background-color: #0e2f51;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: x-large;
+    width: 100%;
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a{
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+    padding: 20px;
+}
+
+nav ul li a:hover{
+    color: #81142b;
+}
+
+nav ul li.user-menu {
+    position: relative;
+}
+
+nav ul li.user-menu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #81142b;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li.user-menu:hover ul {
+    display: block;
+}
+
+nav ul li.user-menu ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li.user-menu ul li a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav ul li.user-menu ul li a:hover {
+    background-color: #ac1837;
+}
+
+#navimg{
+    height: 50px;
+}
+
+.book-item {
+    width: 1250px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.book-item input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+#Available{
+    text-align: center;
+}
+
+#search-bar {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 18px;
+}
+
+#search-criteria {
+    padding: 10px;
+    font-size: 18px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #81142b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #ac1837;
+}
+
+.book-item span {
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    padding: 5px; 
+    margin: 5px; 
+}
+
+.book-item .title {
+    font-weight: bold;
+}
+
+.book-item .publication_date{
+    display: none;
+}
+
+.book-item:hover .publication_date{
+    display: block;
+}
+
+.book-item .isbn{
+    display: none;
+}
+
+.book-item:hover .isbn{
+    display: block;
+}
+
+.book-item .pages{
+    display: none;
+}
+
+.book-item:hover .pages{
+    display: block;
+}
+
+.book-item .briefing{
+    display: none;
+}
+
+.book-item:hover .briefing{
+    display: block;
+}
+
+#rent-button {
+    width: 500px;
+    height: 50px;
+    background-color: #81142b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+#rent-button:hover {
+    background-color: #ac1837;
+}
+
+#rent-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rented-book-item {
+    width: 1250px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.rented-book-item input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+.rented-book-item span {
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    padding: 5px; 
+    margin: 5px; 
+}
+
+.rented-book-item .title {
+    font-weight: bold;
+}
+
+.rented-book-item .rent-date{
+    display: none;
+}
+
+.rented-book-item:hover .rent-date{
+    display: block;
+}
+
+.rented-book-item .return-date{
+    display: none;
+}
+
+.rented-book-item:hover .return-date{
+    display: block;
+}
+
+.rented-book-item .isbn{
+    display: none;
+}
+
+.rented-book-item:hover .isbn{
+    display: block;
+}
+
+#Rented{
+    text-align: center;
+}
+
+#return-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#return-button {
+    width: 500px;
+    height: 50px;
+    background-color: #81142b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+#return-button:hover {
+    background-color: #ac1837;
+}
+
+footer {
+    background-color: #0e2f51;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: #f2f2f2;
+}
+
+#img-content{
+    width: 100%;
+    position: fixed;
+}

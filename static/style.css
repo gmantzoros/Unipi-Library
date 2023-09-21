@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+body {
+    font-family: 'Raleway', sans-serif;  
+    background-image: url('/static/background_library.jpg');
+    -webkit-font-smoothing: antialiased;
+  }
+  
+/* Center the wrapper */
+#wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style form elements */
+form {
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 95%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    box-shadow: inset 0 0 0 0 #0e2f51;
+    width: 100%;
+    padding: 10px;
+    background-color: #0e2f51;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 1.5s ease-in-out;
+}
+input[type="submit"]:hover{
+    background-color: #0e2f51;
+    box-shadow: inset 800px 0 0 0 #81142b;
+}
+
+/* Style links */
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Center headings */
+h1, h2 {
+    text-align: center;
+}
+
+/* Add some spacing */
+p {
+    margin: 10px 0;
+}
+
+/* Hide the second form initially */
+form:nth-child(2) {
+    display: none;
+}
